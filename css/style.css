@@ -1,0 +1,78 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Helvetica, sans-serif;
+  }
+  
+  h1 {
+    font-weight: normal;
+    font-size: 1.5rem;
+  }
+  
+  .grid-container {
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    background-color: red;
+    padding: 5px;
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    width: 300px
+  }
+  
+  .grid-item {
+    background-color: rgba(221, 220, 212, 0.979);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 12px 10px;
+    min-height: 20px;
+    min-width: 20px;
+    font-size: 15px;
+    text-align: center;
+    color: #333;
+  }
+  
+  #form-container button {
+    margin-bottom: 1rem;
+    margin-left: .5rem
+  }
+  
+  /* Desktop */
+  @media only screen and (min-width: 1024px) {
+    .grid-container {
+      padding: 10px
+    }
+  
+    .grid-item {
+      padding: 15px 15px;
+      min-height: 30px;
+      min-width: 30px;
+      font-size: 30px;
+      font-optical-sizing: 30px;
+    }
+  
+  }
+
+  /*=========================== Rotation de la grille ====================*/
+  @-webkit-keyframes rotate {
+    0% {
+        -webkit-transform: rotate(0deg) rotate(0deg);
+        background-color:red;
+    }  
+  13% {
+        -webkit-transform: rotate(45deg)  ;
+  }
+  25% {
+      -webkit-transform: rotate(90deg)  ;
+  }
+  75% {
+      -webkit-transform: rotate(-90deg) ;
+  }
+  
+}
+#main{
+    -webkit-animation-duration: 10s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-name:"rotate";
+    position:absolute;
+    left:30%;
+    top:20%; 
+}

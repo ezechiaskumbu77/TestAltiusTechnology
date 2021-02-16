@@ -16,15 +16,39 @@
     />
     <!-- MDB -->
     <link rel="stylesheet" href="css/mdb.min.css" />
+    <!-- My css-->
+   <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <!-- Start your project here-->
-  
+    <div class="container p-md-4">
+      <div id="main">
+        <div id="form-container">
+          <label for="grid" class="bg-info mt-3">Mattrice:NxN</label>
+          <select name="grid" id="grid-select">
+              <option value="2">2x2</option>
+              <option value="3">3x3</option>
+              <option value="4" selected>4x4</option>
+              <option value="5">5x5</option>
+              <option value="6">6x6</option>
+              <option value="7">7x7</option>
+              <option value="8">8x8</option>
+              <option value="9">9x9</option>
+              <option value="10">10x10</option>
+            </select>
+            <div class="container"></div>
+          <button id="next" disabled type="button" class="btn btn-light">👆</button>
+          <button id="finish" disabled type="button" class="btn btn-light">⏯</button>
+        </div> <!-- close form container -->
+        <div class="grid-container" id="container"></div>
+      </div> <!-- close main -->  
+    </div>
+   
     <!-- End your project here-->
 
     <!-- MDB -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <!-- Custom scripts -->
-    <script type="text/javascript"></script>
+  <script src="js/script.js"></script>
   </body>
 </html>
