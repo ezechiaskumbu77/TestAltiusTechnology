@@ -1,40 +1,40 @@
 // jshint esversion:6
 
 function* spiral(num) {
-    let ling_initiale = 0, ligne_finale = num - 1;
-    let col_initiale = 0, col_finale = num - 1;
-    let conteur = 1;
-    while (ling_initiale <= ligne_finale && col_initiale <= col_finale) {
+    let ligneInitiale = 0, ligneFinale = num - 1;
+    let colonneInitiale = 0, colonneFinale = num - 1;
+    let compteur = 1;
+    while (ligneInitiale <= ligneFinale && colonneInitiale <= colonneFinale) {
       // Ligne supperieure
-      for (let i = col_initiale; i <= ligne_finale; i++) {
-        yield { 'row': ling_initiale, 'col': i, 'counter': conteur };
-        conteur++;
+      for (let i = colonneInitiale; i <= ligneFinale; i++) {
+        yield { 'row': ligneInitiale, 'col': i, 'counter': compteur };
+        compteur++;
       }
-      ling_initiale++;
+      ligneInitiale++;
   
       // Construction de la dernière colonne
-      for (let i = ling_initiale; i <= ligne_finale; i++) {
-        yield { 'col': col_finale, 'row': i, 'counter': conteur };
-        conteur++;
+      for (let i = ligneInitiale; i <= ligneFinale; i++) {
+        yield { 'col': colonneFinale, 'row': i, 'counter': compteur };
+        compteur++;
       }
-      col_finale--;
+      colonneFinale--;
   
       // Ici j'ai construit la ligne inférieure
-      if (ling_initiale <= ligne_finale) {
-        for (let i = col_finale; i >= col_initiale; i--) {
-          yield { 'row': ligne_finale, 'col': i, 'counter': conteur };
-          conteur++;
+      if (ligneInitiale <= ligneFinale) {
+        for (let i = colonneFinale; i >= colonneInitiale; i--) {
+          yield { 'row': ligneFinale, 'col': i, 'counter': compteur };
+          compteur++;
         }
-        ligne_finale--;
+        ligneFinale--;
       }
   
-      if (col_initiale <= col_finale) {
+      if (colonneInitiale <= colonneFinale) {
         // Imprimer la premiere colonne vers le haut
-        for (let i = ligne_finale; i >= ling_initiale; i--) {
-          yield { 'col': col_initiale, 'row': i, 'counter': conteur };
-          conteur++;
+        for (let i = ligneFinale; i >= ligneInitiale; i--) {
+          yield { 'col': colonneInitiale, 'row': i, 'counter': compteur };
+          compteur++;
         }
-        col_initiale++;
+        colonneInitiale++;
       }
     }// La fin de la boucle while
     
@@ -79,11 +79,11 @@ function select_diag(){
   }
   // Fin de la Fonction pour Contruire les Grids
   
-  function doNext(next, time = false) {
-    if (time) {
-      setTimeout(function () {
+  function doNext(next, temps = false) {
+    if (temps) {
+      settempsout(function () {
         document.querySelector(`[data-row="${next.row}"][data-col="${next.col}"]`).innerText = next.counter;
-      }, time);
+      }, temps);
     } else {
       document.querySelector(`[data-row="${next.row}"][data-col="${next.col}"]`).innerText = next.counter;
     }
@@ -103,10 +103,10 @@ function select_diag(){
     doNext(next);
   });
   document.querySelector('#finish').addEventListener('click', (event) => {
-    const time = 1000;
+    const temps = 500;
     let i = 1;
     while (next = spiralGen.next().value) {
-      doNext(next, time * i);
+      doNext(next, temps * i);
       i++;
     }
   });

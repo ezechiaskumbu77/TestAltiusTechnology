@@ -32,7 +32,7 @@ body {
   
   #form-container button {
     margin-bottom: 1rem;
-    margin-left: .5rem
+    margin-left: .4rem
   }
   
   /* Desktop */
@@ -43,10 +43,10 @@ body {
   
     .grid-item {
       padding: 15px 15px;
-      min-height: 30px;
-      min-width: 30px;
-      font-size: 30px;
-      font-optical-sizing: 30px;
+      min-height: 25px;
+      min-width: 25px;
+      font-size: 25px;
+      font-optical-sizing: 25px;
     }
   
   }
@@ -69,7 +69,7 @@ body {
   
 }
 #main{
-    -webkit-animation-duration: 10s;
+    -webkit-animation-duration: 7s;
     -webkit-animation-timing-function: linear;
     -webkit-animation-name:"rotate";
     position:absolute;
